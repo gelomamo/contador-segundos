@@ -9,4 +9,15 @@ import "../styles/index.css";
 import Home from "./component/home.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let second = 0;
+setInterval(function () {
+	const mil = Math.floor(second / 1000);
+	const cent = Math.floor(second / 100);
+	const dec = Math.floor(second / 10);
+	const und = Math.floor(second / 1);
+	second++;
+	ReactDOM.render(
+		<Home uno={und} dos={dec} tres={cent} cuatro={mil} />,
+		document.querySelector("#app")
+	);
+}, 1000);
